@@ -13,6 +13,25 @@
 		26A3B01C243EF86400C6FA49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26A3B01A243EF86400C6FA49 /* Main.storyboard */; };
 		26A3B01E243EF86700C6FA49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26A3B01D243EF86700C6FA49 /* Assets.xcassets */; };
 		26A3B021243EF86700C6FA49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26A3B01F243EF86700C6FA49 /* LaunchScreen.storyboard */; };
+		26A3B02A243EF98100C6FA49 /* ScenarioOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A3B029243EF98100C6FA49 /* ScenarioOneViewController.swift */; };
+		26A3B02D243EFB6E00C6FA49 /* ScenarioOneService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A3B02C243EFB6E00C6FA49 /* ScenarioOneService.swift */; };
+		26A3B02F243EFE7E00C6FA49 /* ScenarioOneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A3B02E243EFE7E00C6FA49 /* ScenarioOneViewModel.swift */; };
+		26A3B038243F060200C6FA49 /* Decimal+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A3B037243F060200C6FA49 /* Decimal+Extensions.swift */; };
+		26A3B03A243F062D00C6FA49 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A3B039243F062D00C6FA49 /* UITableView+Extensions.swift */; };
+		26A3B03C243F065000C6FA49 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A3B03B243F065000C6FA49 /* Array+Extensions.swift */; };
+		26A3B0E2243F0D9100C6FA49 /* MEMTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A3B0E1243F0D9100C6FA49 /* MEMTableViewController.swift */; };
+		26A3B0E4243F0E7800C6FA49 /* ScenarioOneCellFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A3B0E3243F0E7800C6FA49 /* ScenarioOneCellFactory.swift */; };
+		26A3B0E6243F23BC00C6FA49 /* ScenarioOneMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A3B0E5243F23BC00C6FA49 /* ScenarioOneMapper.swift */; };
+		26A3B0EA243F249500C6FA49 /* TitleInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A3B0E8243F249500C6FA49 /* TitleInfoTableViewCell.swift */; };
+		26A3B0EB243F249500C6FA49 /* TitleInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26A3B0E9243F249500C6FA49 /* TitleInfoTableViewCell.xib */; };
+		26A3B0EF243F29B000C6FA49 /* ReusableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A3B0EE243F29B000C6FA49 /* ReusableView+Extensions.swift */; };
+		26A3B0F7243F302000C6FA49 /* ScenarioTwoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A3B0F2243F302000C6FA49 /* ScenarioTwoViewModel.swift */; };
+		26A3B0F8243F302000C6FA49 /* ScenarioTwoMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A3B0F3243F302000C6FA49 /* ScenarioTwoMapper.swift */; };
+		26A3B0F9243F302000C6FA49 /* ScenarioTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A3B0F4243F302000C6FA49 /* ScenarioTwoViewController.swift */; };
+		26A3B0FA243F302000C6FA49 /* ScenarioTwoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A3B0F5243F302000C6FA49 /* ScenarioTwoService.swift */; };
+		26A3B0FB243F302000C6FA49 /* ScenarioTwoCellFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A3B0F6243F302000C6FA49 /* ScenarioTwoCellFactory.swift */; };
+		26A3B0FE243F394500C6FA49 /* TitleDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A3B0FC243F394500C6FA49 /* TitleDescriptionTableViewCell.swift */; };
+		26A3B0FF243F394500C6FA49 /* TitleDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26A3B0FD243F394500C6FA49 /* TitleDescriptionTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +43,25 @@
 		26A3B01D243EF86700C6FA49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		26A3B020243EF86700C6FA49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		26A3B022243EF86700C6FA49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26A3B029243EF98100C6FA49 /* ScenarioOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioOneViewController.swift; sourceTree = "<group>"; };
+		26A3B02C243EFB6E00C6FA49 /* ScenarioOneService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioOneService.swift; sourceTree = "<group>"; };
+		26A3B02E243EFE7E00C6FA49 /* ScenarioOneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioOneViewModel.swift; sourceTree = "<group>"; };
+		26A3B037243F060200C6FA49 /* Decimal+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decimal+Extensions.swift"; sourceTree = "<group>"; };
+		26A3B039243F062D00C6FA49 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		26A3B03B243F065000C6FA49 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
+		26A3B0E1243F0D9100C6FA49 /* MEMTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MEMTableViewController.swift; sourceTree = "<group>"; };
+		26A3B0E3243F0E7800C6FA49 /* ScenarioOneCellFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioOneCellFactory.swift; sourceTree = "<group>"; };
+		26A3B0E5243F23BC00C6FA49 /* ScenarioOneMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioOneMapper.swift; sourceTree = "<group>"; };
+		26A3B0E8243F249500C6FA49 /* TitleInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleInfoTableViewCell.swift; sourceTree = "<group>"; };
+		26A3B0E9243F249500C6FA49 /* TitleInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleInfoTableViewCell.xib; sourceTree = "<group>"; };
+		26A3B0EE243F29B000C6FA49 /* ReusableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReusableView+Extensions.swift"; sourceTree = "<group>"; };
+		26A3B0F2243F302000C6FA49 /* ScenarioTwoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenarioTwoViewModel.swift; sourceTree = "<group>"; };
+		26A3B0F3243F302000C6FA49 /* ScenarioTwoMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenarioTwoMapper.swift; sourceTree = "<group>"; };
+		26A3B0F4243F302000C6FA49 /* ScenarioTwoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenarioTwoViewController.swift; sourceTree = "<group>"; };
+		26A3B0F5243F302000C6FA49 /* ScenarioTwoService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenarioTwoService.swift; sourceTree = "<group>"; };
+		26A3B0F6243F302000C6FA49 /* ScenarioTwoCellFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenarioTwoCellFactory.swift; sourceTree = "<group>"; };
+		26A3B0FC243F394500C6FA49 /* TitleDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleDescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		26A3B0FD243F394500C6FA49 /* TitleDescriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleDescriptionTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +94,9 @@
 		26A3B013243EF86400C6FA49 /* DiscoveryArchitecture */ = {
 			isa = PBXGroup;
 			children = (
+				26A3B0E7243F247C00C6FA49 /* Views */,
+				26A3B036243F05E400C6FA49 /* Extensions */,
+				26A3B028243EF8AB00C6FA49 /* ViewControllers */,
 				26A3B014243EF86400C6FA49 /* AppDelegate.swift */,
 				26A3B016243EF86400C6FA49 /* SceneDelegate.swift */,
 				26A3B018243EF86400C6FA49 /* ViewController.swift */,
@@ -65,6 +106,62 @@
 				26A3B022243EF86700C6FA49 /* Info.plist */,
 			);
 			path = DiscoveryArchitecture;
+			sourceTree = "<group>";
+		};
+		26A3B028243EF8AB00C6FA49 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				26A3B0E1243F0D9100C6FA49 /* MEMTableViewController.swift */,
+				26A3B02B243EFB5900C6FA49 /* Scenario One */,
+				26A3B0F1243F302000C6FA49 /* Scenario Two */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		26A3B02B243EFB5900C6FA49 /* Scenario One */ = {
+			isa = PBXGroup;
+			children = (
+				26A3B029243EF98100C6FA49 /* ScenarioOneViewController.swift */,
+				26A3B02E243EFE7E00C6FA49 /* ScenarioOneViewModel.swift */,
+				26A3B0E5243F23BC00C6FA49 /* ScenarioOneMapper.swift */,
+				26A3B02C243EFB6E00C6FA49 /* ScenarioOneService.swift */,
+				26A3B0E3243F0E7800C6FA49 /* ScenarioOneCellFactory.swift */,
+			);
+			path = "Scenario One";
+			sourceTree = "<group>";
+		};
+		26A3B036243F05E400C6FA49 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				26A3B037243F060200C6FA49 /* Decimal+Extensions.swift */,
+				26A3B039243F062D00C6FA49 /* UITableView+Extensions.swift */,
+				26A3B03B243F065000C6FA49 /* Array+Extensions.swift */,
+				26A3B0EE243F29B000C6FA49 /* ReusableView+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		26A3B0E7243F247C00C6FA49 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				26A3B0E8243F249500C6FA49 /* TitleInfoTableViewCell.swift */,
+				26A3B0E9243F249500C6FA49 /* TitleInfoTableViewCell.xib */,
+				26A3B0FC243F394500C6FA49 /* TitleDescriptionTableViewCell.swift */,
+				26A3B0FD243F394500C6FA49 /* TitleDescriptionTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		26A3B0F1243F302000C6FA49 /* Scenario Two */ = {
+			isa = PBXGroup;
+			children = (
+				26A3B0F4243F302000C6FA49 /* ScenarioTwoViewController.swift */,
+				26A3B0F2243F302000C6FA49 /* ScenarioTwoViewModel.swift */,
+				26A3B0F3243F302000C6FA49 /* ScenarioTwoMapper.swift */,
+				26A3B0F5243F302000C6FA49 /* ScenarioTwoService.swift */,
+				26A3B0F6243F302000C6FA49 /* ScenarioTwoCellFactory.swift */,
+			);
+			path = "Scenario Two";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +224,8 @@
 			files = (
 				26A3B021243EF86700C6FA49 /* LaunchScreen.storyboard in Resources */,
 				26A3B01E243EF86700C6FA49 /* Assets.xcassets in Resources */,
+				26A3B0EB243F249500C6FA49 /* TitleInfoTableViewCell.xib in Resources */,
+				26A3B0FF243F394500C6FA49 /* TitleDescriptionTableViewCell.xib in Resources */,
 				26A3B01C243EF86400C6FA49 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,9 +237,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26A3B0F7243F302000C6FA49 /* ScenarioTwoViewModel.swift in Sources */,
+				26A3B0EF243F29B000C6FA49 /* ReusableView+Extensions.swift in Sources */,
 				26A3B019243EF86400C6FA49 /* ViewController.swift in Sources */,
+				26A3B0E6243F23BC00C6FA49 /* ScenarioOneMapper.swift in Sources */,
+				26A3B03C243F065000C6FA49 /* Array+Extensions.swift in Sources */,
+				26A3B038243F060200C6FA49 /* Decimal+Extensions.swift in Sources */,
+				26A3B02D243EFB6E00C6FA49 /* ScenarioOneService.swift in Sources */,
+				26A3B03A243F062D00C6FA49 /* UITableView+Extensions.swift in Sources */,
 				26A3B015243EF86400C6FA49 /* AppDelegate.swift in Sources */,
+				26A3B02F243EFE7E00C6FA49 /* ScenarioOneViewModel.swift in Sources */,
+				26A3B0FA243F302000C6FA49 /* ScenarioTwoService.swift in Sources */,
+				26A3B0FB243F302000C6FA49 /* ScenarioTwoCellFactory.swift in Sources */,
+				26A3B0E4243F0E7800C6FA49 /* ScenarioOneCellFactory.swift in Sources */,
+				26A3B0E2243F0D9100C6FA49 /* MEMTableViewController.swift in Sources */,
 				26A3B017243EF86400C6FA49 /* SceneDelegate.swift in Sources */,
+				26A3B0F8243F302000C6FA49 /* ScenarioTwoMapper.swift in Sources */,
+				26A3B02A243EF98100C6FA49 /* ScenarioOneViewController.swift in Sources */,
+				26A3B0EA243F249500C6FA49 /* TitleInfoTableViewCell.swift in Sources */,
+				26A3B0F9243F302000C6FA49 /* ScenarioTwoViewController.swift in Sources */,
+				26A3B0FE243F394500C6FA49 /* TitleDescriptionTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
