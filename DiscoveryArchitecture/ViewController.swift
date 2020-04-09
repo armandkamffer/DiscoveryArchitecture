@@ -38,7 +38,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func scenarioThreeTapped(_ sender: Any) {
-        
+        let viewModel = ScenarioThreeViewModel()
+        let viewController = ScenarioThreeViewController(with: viewModel)
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }
 

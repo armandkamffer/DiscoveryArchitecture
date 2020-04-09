@@ -32,6 +32,11 @@
 		26A3B0FB243F302000C6FA49 /* ScenarioTwoCellFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A3B0F6243F302000C6FA49 /* ScenarioTwoCellFactory.swift */; };
 		26A3B0FE243F394500C6FA49 /* TitleDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A3B0FC243F394500C6FA49 /* TitleDescriptionTableViewCell.swift */; };
 		26A3B0FF243F394500C6FA49 /* TitleDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26A3B0FD243F394500C6FA49 /* TitleDescriptionTableViewCell.xib */; };
+		26A3B106243F3D3800C6FA49 /* ScenarioThreeCellFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A3B101243F3D3800C6FA49 /* ScenarioThreeCellFactory.swift */; };
+		26A3B107243F3D3800C6FA49 /* ScenarioThreeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A3B102243F3D3800C6FA49 /* ScenarioThreeMapper.swift */; };
+		26A3B108243F3D3800C6FA49 /* ScenarioThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A3B103243F3D3800C6FA49 /* ScenarioThreeViewController.swift */; };
+		26A3B109243F3D3800C6FA49 /* ScenarioThreeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A3B104243F3D3800C6FA49 /* ScenarioThreeViewModel.swift */; };
+		26A3B10A243F3D3800C6FA49 /* ScenarioThreeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A3B105243F3D3800C6FA49 /* ScenarioThreeService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +67,11 @@
 		26A3B0F6243F302000C6FA49 /* ScenarioTwoCellFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenarioTwoCellFactory.swift; sourceTree = "<group>"; };
 		26A3B0FC243F394500C6FA49 /* TitleDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleDescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		26A3B0FD243F394500C6FA49 /* TitleDescriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleDescriptionTableViewCell.xib; sourceTree = "<group>"; };
+		26A3B101243F3D3800C6FA49 /* ScenarioThreeCellFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenarioThreeCellFactory.swift; sourceTree = "<group>"; };
+		26A3B102243F3D3800C6FA49 /* ScenarioThreeMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenarioThreeMapper.swift; sourceTree = "<group>"; };
+		26A3B103243F3D3800C6FA49 /* ScenarioThreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenarioThreeViewController.swift; sourceTree = "<group>"; };
+		26A3B104243F3D3800C6FA49 /* ScenarioThreeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenarioThreeViewModel.swift; sourceTree = "<group>"; };
+		26A3B105243F3D3800C6FA49 /* ScenarioThreeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenarioThreeService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +124,7 @@
 				26A3B0E1243F0D9100C6FA49 /* MEMTableViewController.swift */,
 				26A3B02B243EFB5900C6FA49 /* Scenario One */,
 				26A3B0F1243F302000C6FA49 /* Scenario Two */,
+				26A3B100243F3D3800C6FA49 /* Scenario Three */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -162,6 +173,18 @@
 				26A3B0F6243F302000C6FA49 /* ScenarioTwoCellFactory.swift */,
 			);
 			path = "Scenario Two";
+			sourceTree = "<group>";
+		};
+		26A3B100243F3D3800C6FA49 /* Scenario Three */ = {
+			isa = PBXGroup;
+			children = (
+				26A3B103243F3D3800C6FA49 /* ScenarioThreeViewController.swift */,
+				26A3B104243F3D3800C6FA49 /* ScenarioThreeViewModel.swift */,
+				26A3B102243F3D3800C6FA49 /* ScenarioThreeMapper.swift */,
+				26A3B105243F3D3800C6FA49 /* ScenarioThreeService.swift */,
+				26A3B101243F3D3800C6FA49 /* ScenarioThreeCellFactory.swift */,
+			);
+			path = "Scenario Three";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,23 +261,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				26A3B0F7243F302000C6FA49 /* ScenarioTwoViewModel.swift in Sources */,
+				26A3B10A243F3D3800C6FA49 /* ScenarioThreeService.swift in Sources */,
 				26A3B0EF243F29B000C6FA49 /* ReusableView+Extensions.swift in Sources */,
 				26A3B019243EF86400C6FA49 /* ViewController.swift in Sources */,
 				26A3B0E6243F23BC00C6FA49 /* ScenarioOneMapper.swift in Sources */,
 				26A3B03C243F065000C6FA49 /* Array+Extensions.swift in Sources */,
 				26A3B038243F060200C6FA49 /* Decimal+Extensions.swift in Sources */,
 				26A3B02D243EFB6E00C6FA49 /* ScenarioOneService.swift in Sources */,
+				26A3B109243F3D3800C6FA49 /* ScenarioThreeViewModel.swift in Sources */,
 				26A3B03A243F062D00C6FA49 /* UITableView+Extensions.swift in Sources */,
 				26A3B015243EF86400C6FA49 /* AppDelegate.swift in Sources */,
 				26A3B02F243EFE7E00C6FA49 /* ScenarioOneViewModel.swift in Sources */,
 				26A3B0FA243F302000C6FA49 /* ScenarioTwoService.swift in Sources */,
 				26A3B0FB243F302000C6FA49 /* ScenarioTwoCellFactory.swift in Sources */,
 				26A3B0E4243F0E7800C6FA49 /* ScenarioOneCellFactory.swift in Sources */,
+				26A3B108243F3D3800C6FA49 /* ScenarioThreeViewController.swift in Sources */,
 				26A3B0E2243F0D9100C6FA49 /* MEMTableViewController.swift in Sources */,
 				26A3B017243EF86400C6FA49 /* SceneDelegate.swift in Sources */,
+				26A3B106243F3D3800C6FA49 /* ScenarioThreeCellFactory.swift in Sources */,
 				26A3B0F8243F302000C6FA49 /* ScenarioTwoMapper.swift in Sources */,
 				26A3B02A243EF98100C6FA49 /* ScenarioOneViewController.swift in Sources */,
 				26A3B0EA243F249500C6FA49 /* TitleInfoTableViewCell.swift in Sources */,
+				26A3B107243F3D3800C6FA49 /* ScenarioThreeMapper.swift in Sources */,
 				26A3B0F9243F302000C6FA49 /* ScenarioTwoViewController.swift in Sources */,
 				26A3B0FE243F394500C6FA49 /* TitleDescriptionTableViewCell.swift in Sources */,
 			);
