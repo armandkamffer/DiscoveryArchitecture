@@ -17,7 +17,7 @@ class ScenarioThreeViewModel {
         self.service = service
     }
     
-    func loadItems(completion: @escaping (Error?)->()) {
+    func loadResponse(completion: @escaping (Error?)->()) {
         service.loadData { [weak self] (response, error) in
             if let error = error {
                 completion(error)
@@ -27,6 +27,10 @@ class ScenarioThreeViewModel {
             self?.groups = ScenarioThreeMapper.mapGroups(with: response)
             completion(nil)
         }
+    }
+    
+    func group(at index: Int) -> ScenarioThreeGroup? {
+        return groups?.element(at: index)
     }
     
     func itemInGroup(at indexPath: IndexPath) -> ScenarioThreeItem? {

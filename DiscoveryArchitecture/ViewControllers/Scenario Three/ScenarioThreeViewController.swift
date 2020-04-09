@@ -11,11 +11,11 @@ import UIKit
 
 class ScenarioThreeViewController: MEMTableViewController {
     private var viewModel: ScenarioThreeViewModel
-    private var cellFactory: ScenarioThreeCellFactory
+    private var tableFactory: ScenarioThreeTableFactory
     
     init(with viewModel: ScenarioThreeViewModel) {
         self.viewModel = viewModel
-        self.cellFactory = ScenarioThreeCellFactory()
+        self.tableFactory = ScenarioThreeTableFactory()
         super.init(style: .grouped)
     }
     
@@ -26,12 +26,12 @@ class ScenarioThreeViewController: MEMTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadItems()
+        loadResponse()
     }
     
-    private func loadItems() {
+    private func loadResponse() {
         showLoading()
-        viewModel.loadItems { [weak self] (error) in
+        viewModel.loadResponse { [weak self] (error) in
             self?.hideLoading()
             if let error = error {
                 self?.handleError(error)
@@ -42,7 +42,7 @@ class ScenarioThreeViewController: MEMTableViewController {
     
     private func handleError(_ error: Error) {
         showError { [weak self] in
-            self?.loadItems()
+            self?.loadResponse()
         }
     }
 }
@@ -54,10 +54,15 @@ extension ScenarioThreeViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = viewModel.itemInGroup(at: indexPath)
-        return cellFactory.cell(for: item, in: tableView, at: indexPath)
+        return tableFactory.cell(for: item, in: tableView, at: indexPath)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.itemCountInGroup(section)
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let group = viewModel.group(at: section)
+        return tableFactory.header(for: group)
     }
 }

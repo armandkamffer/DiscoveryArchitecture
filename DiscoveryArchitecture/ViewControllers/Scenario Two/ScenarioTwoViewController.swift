@@ -26,12 +26,12 @@ class ScenarioTwoViewController: MEMTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadItems()
+        loadResponse()
     }
     
-    private func loadItems() {
+    private func loadResponse() {
         showLoading()
-        viewModel.loadItems { [weak self] (error) in
+        viewModel.loadResponse { [weak self] (error) in
             self?.hideLoading()
             if let error = error {
                 self?.handleError(error)
@@ -42,7 +42,7 @@ class ScenarioTwoViewController: MEMTableViewController {
     
     private func handleError(_ error: Error) {
         showError { [weak self] in
-            self?.loadItems()
+            self?.loadResponse()
         }
     }
 }

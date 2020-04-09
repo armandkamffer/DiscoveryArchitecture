@@ -18,6 +18,7 @@ class ScenarioThreeMapper {
             groups.append(summaryGroup)
         }
         groups.append(mapDetailGroup(with: response))
+        groups.append(mapMoreDetailGroup(with: response))
         return groups
     }
     
@@ -27,28 +28,48 @@ class ScenarioThreeMapper {
         }
         let title = "All benefits"
         let totalCostText = totalCost.currency ?? "-"
-        return ScenarioThreeGroup(items: [
-            ScenarioThreeItem(title: title, cost: totalCostText, type: .summary)
-        ])
+        let item = ScenarioThreeItem(title: title, cost: totalCostText, type: .info)
+        return ScenarioThreeGroup(type: .summary, title: "Summary", subtitle: nil, items: [item])
     }
     
     static func mapDetailGroup(with response: ScenarioThreeResponse) -> ScenarioThreeGroup {
         let items = response.detail.map {
-            ScenarioThreeItem(title: $0.title, cost: $0.cost.currency ?? "-", type: .detail)
+            ScenarioThreeItem(title: $0.title, cost: $0.cost.currency ?? "-", type: .description)
         }
-        return ScenarioThreeGroup(items: items)
+        return ScenarioThreeGroup(type: .detail, title: "Detail", subtitle: "The following is a breakdown of your benefit costs", items: items)
+    }
+    
+    static func mapMoreDetailGroup(with response: ScenarioThreeResponse) -> ScenarioThreeGroup {
+        var isInfo = false
+        let items: [ScenarioThreeItem] = response.detail.map {
+            let type: ScenarioThreeItemType = isInfo ? .info : .description
+            isInfo.toggle()
+            return ScenarioThreeItem(title: $0.title, cost: $0.cost.currency ?? "-", type: type)
+        }
+        return ScenarioThreeGroup(type: .moreDetail, title: nil, subtitle: nil, items: items)
     }
 }
 
-enum ScenarioThreeItemType {
+enum ScenarioThreeGroupType {
     case summary
     case detail
+    case moreDetail
+}
+
+enum ScenarioThreeItemType {
+    case info
+    case description
 }
 
 class ScenarioThreeGroup {
+    var type: ScenarioThreeGroupType
+    var title: String?
+    var subtitle: String?
     var items: [ScenarioThreeItem]
     
-    init(items: [ScenarioThreeItem]) {
+    init(type: ScenarioThreeGroupType, title: String?, subtitle: String?, items: [ScenarioThreeItem]) {
+        self.type = type
+        self.title = title
         self.items = items
     }
 }

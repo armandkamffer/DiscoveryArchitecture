@@ -17,7 +17,7 @@ class ScenarioTwoViewModel {
         self.service = service
     }
     
-    func loadItems(completion: @escaping (Error?)->()) {
+    func loadResponse(completion: @escaping (Error?)->()) {
         service.loadData { [weak self] (response, error) in
             if let error = error {
                 completion(error)

@@ -21,7 +21,8 @@ class ScenarioThreeService: ScenarioThreeAbstractService {
                 detail: [
                     ScenarioThreeDetailResponse(title: "Benefit one", cost: 2000),
                     ScenarioThreeDetailResponse(title: "Benefit two", cost: 3425435435),
-                    ScenarioThreeDetailResponse(title: "Benefit three", cost: 3023932234324243)
+                    ScenarioThreeDetailResponse(title: "Benefit three", cost: 3023932234324243),
+                    ScenarioThreeDetailResponse(title: "Benefit four", cost: 232532454)
                 ]
             )
             completion(response, nil)

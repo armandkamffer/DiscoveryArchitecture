@@ -10,10 +10,18 @@ import Foundation
 import UIKit
 
 public protocol ReusableView: class {}
-extension UITableViewCell: ReusableView {}
 
 extension ReusableView where Self: UITableViewCell {
     public static var defaultReuseIdentifier: String {
         return String(describing: self)
     }
 }
+
+extension ReusableView where Self: UITableViewHeaderFooterView {
+    public static var defaultReuseIdentifier: String {
+        return String(describing: self)
+    }
+}
+
+extension UITableViewCell: ReusableView {}
+extension UITableViewHeaderFooterView: ReusableView {}

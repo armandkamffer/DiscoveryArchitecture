@@ -1,5 +1,5 @@
 //
-//  ScenarioOneCellFactory.swift
+//  ScenarioThreeCellFactory.swift
 //  DiscoveryArchitecture
 //
 //  Created by Armand Kamffer on 2020/04/09.
@@ -13,7 +13,7 @@ protocol ScenarioThreeCellAbstractFactory {
     func cell(for item: ScenarioThreeItem, in tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell
 }
 
-class ScenarioThreeSummaryCellFactory: ScenarioThreeCellAbstractFactory {
+class ScenarioThreeInfoCellFactory: ScenarioThreeCellAbstractFactory {
     func cell(for item: ScenarioThreeItem, in tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeuedCell(ofType: TitleInfoTableViewCell.self, indexPath: indexPath)
         cell.configure(title: item.title, info: item.cost)
@@ -21,29 +21,10 @@ class ScenarioThreeSummaryCellFactory: ScenarioThreeCellAbstractFactory {
     }
 }
 
-class ScenarioThreeDetailCellFactory: ScenarioThreeCellAbstractFactory {
+class ScenarioThreeDescriptionCellFactory: ScenarioThreeCellAbstractFactory {
     func cell(for item: ScenarioThreeItem, in tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeuedCell(ofType: TitleDescriptionTableViewCell.self, indexPath: indexPath)
         cell.configure(title: item.title, description: item.cost)
         return cell
-    }
-}
-
-class ScenarioThreeCellFactory {
-    let cellCreators: [ScenarioThreeItemType:ScenarioThreeCellAbstractFactory]
-    
-    init() {
-        cellCreators = [
-            .summary: ScenarioThreeSummaryCellFactory(),
-            .detail: ScenarioThreeDetailCellFactory()
-        ]
-    }
-    
-    func cell(for item: ScenarioThreeItem?, in tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell {
-        guard let item = item,
-            let creator = cellCreators[item.type] else {
-            return UITableViewCell()
-        }
-        return creator.cell(for: item, in: tableView, at: indexPath)
     }
 }
