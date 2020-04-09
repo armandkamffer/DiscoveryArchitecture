@@ -18,7 +18,6 @@ protocol ScenarioItem {
     func viewController() -> UIViewController
 }
 
-
 class ViewController: UITableViewController {
     var scenarios: [Scenario] = [
         ScenarioOne(),
@@ -43,6 +42,7 @@ class ViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let viewController = scenarios[indexPath.section].items[indexPath.row].viewController()
+        viewController.title = scenarios[indexPath.section].items[indexPath.row].title
         navigationController?.pushViewController(viewController, animated: true)
     }
     
