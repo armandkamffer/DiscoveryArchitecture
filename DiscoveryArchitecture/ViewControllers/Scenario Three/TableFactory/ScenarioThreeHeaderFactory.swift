@@ -15,30 +15,23 @@ protocol ScenarioThreeHeaderAbstractFactory {
 
 class ScenarioThreeSummaryHeaderFactory: ScenarioThreeHeaderAbstractFactory {
     func header(for group: ScenarioThreeGroup?) -> UIView? {
-        let header = UITableViewHeaderFooterView()
-        header.textLabel?.text = group?.title
-        styleHeader(header)
+        guard let header = TitleHeaderView.headerView(),
+            let title = group?.title else {
+            return nil
+        }
+        header.configure(title: title)
         return header
-    }
-    
-    func styleHeader(_ header: UITableViewHeaderFooterView) {
-        header.contentView.backgroundColor = .white
-        header.textLabel?.font = UIFont.boldSystemFont(ofSize: 20)
     }
 }
 
 class ScenarioThreeDetailHeaderFactory: ScenarioThreeHeaderAbstractFactory {
     func header(for group: ScenarioThreeGroup?) -> UIView? {
-        let header = UITableViewHeaderFooterView()
-        header.textLabel?.text = group?.title
-        header.detailTextLabel?.text = group?.subtitle
-        styleHeader(header)
+        guard let header = TitleDescriptionHeaderView.headerView(),
+            let title = group?.title,
+            let description = group?.description else {
+            return nil
+        }
+        header.configure(title: title, description: description)
         return header
-    }
-    
-    func styleHeader(_ header: UITableViewHeaderFooterView) {
-        header.contentView.backgroundColor = .white
-        header.textLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        header.detailTextLabel?.font = UIFont.systemFont(ofSize: 15)
     }
 }

@@ -29,14 +29,14 @@ class ScenarioThreeMapper {
         let title = "All benefits"
         let totalCostText = totalCost.currency ?? "-"
         let item = ScenarioThreeItem(title: title, cost: totalCostText, type: .info)
-        return ScenarioThreeGroup(type: .summary, title: "Summary", subtitle: nil, items: [item])
+        return ScenarioThreeGroup(type: .summary, title: "Summary", description: nil, items: [item])
     }
     
     static func mapDetailGroup(with response: ScenarioThreeResponse) -> ScenarioThreeGroup {
         let items = response.detail.map {
             ScenarioThreeItem(title: $0.title, cost: $0.cost.currency ?? "-", type: .description)
         }
-        return ScenarioThreeGroup(type: .detail, title: "Detail", subtitle: "The following is a breakdown of your benefit costs", items: items)
+        return ScenarioThreeGroup(type: .detail, title: "Detail", description: "The following is a breakdown of your benefit costs", items: items)
     }
     
     static func mapMoreDetailGroup(with response: ScenarioThreeResponse) -> ScenarioThreeGroup {
@@ -46,7 +46,7 @@ class ScenarioThreeMapper {
             isInfo.toggle()
             return ScenarioThreeItem(title: $0.title, cost: $0.cost.currency ?? "-", type: type)
         }
-        return ScenarioThreeGroup(type: .moreDetail, title: nil, subtitle: nil, items: items)
+        return ScenarioThreeGroup(type: .moreDetail, title: nil, description: nil, items: items)
     }
 }
 
@@ -64,13 +64,14 @@ enum ScenarioThreeItemType {
 class ScenarioThreeGroup {
     var type: ScenarioThreeGroupType
     var title: String?
-    var subtitle: String?
+    var description: String?
     var items: [ScenarioThreeItem]
     
-    init(type: ScenarioThreeGroupType, title: String?, subtitle: String?, items: [ScenarioThreeItem]) {
+    init(type: ScenarioThreeGroupType, title: String?, description: String?, items: [ScenarioThreeItem]) {
         self.type = type
         self.title = title
         self.items = items
+        self.description = description
     }
 }
 

@@ -40,4 +40,13 @@ class ScenarioThreeTableFactory {
         }
         return creator.header(for: group)
     }
+    
+    func headerHeight(for group: ScenarioThreeGroup?) -> CGFloat {
+        guard let group = group,
+            headerCreators[group.type] != nil,
+            group.title != nil else {
+            return 35
+        }
+        return UITableView.automaticDimension
+    }
 }

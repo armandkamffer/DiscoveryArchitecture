@@ -65,4 +65,20 @@ extension ScenarioThreeViewController {
         let group = viewModel.group(at: section)
         return tableFactory.header(for: group)
     }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        let group = viewModel.group(at: section)
+        return tableFactory.headerHeight(for: group)
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return nil
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if section == viewModel.groups?.index(before: viewModel.groups?.endIndex ?? 0) {
+            return UITableView.automaticDimension
+        }
+        return CGFloat.leastNormalMagnitude
+    }
 }
