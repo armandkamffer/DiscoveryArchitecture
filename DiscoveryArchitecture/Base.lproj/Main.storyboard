@@ -41,10 +41,10 @@
                                             <action selector="scenarioTwoTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hn0-dX-rKy"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="am9-Z6-KY6" userLabel="Scenario 2 - Multiple Cell Types + Dynamic Sections">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="am9-Z6-KY6" userLabel="Scenario 2 - Dynamic Sections">
                                         <rect key="frame" x="0.0" y="108" width="46" height="0.0"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Scenario 2 - Multiple Cell Types + Dynamic Sections"/>
+                                        <state key="normal" title="Scenario 2 - Dynamic Sections"/>
                                         <connections>
                                             <action selector="scenarioTwoDynamicSectionsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F4h-CK-xmb"/>
                                         </connections>
