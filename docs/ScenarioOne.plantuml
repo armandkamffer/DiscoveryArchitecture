@@ -1,0 +1,94 @@
+@startuml ScenarioOne
+' STYLE START
+hide empty members
+skinparam shadowing false
+' STYLE END
+class "ScenarioOneViewModel" as ScenarioOneViewModel {
+    -service: ScenarioOneAbstractService
+    -response: ScenarioOneResponse?
+    -items: [ScenarioOneItem]?
+    +configure(service:ScenarioOneAbstractService)
+    +loadItems(completion:)
+}
+
+ScenarioOneViewModel *-- ScenarioOneAbstractService
+ScenarioOneViewModel "0" o-- "*" ScenarioOneItem : contains
+ScenarioOneViewModel "0" o-- "1" ScenarioOneResponse : contains
+ScenarioOneViewModel ..> ScenarioOneMapper : uses
+
+' STYLE START
+hide empty members
+skinparam shadowing false
+' STYLE END
+class "ScenarioOneMapper" as ScenarioOneMapper {
+    +{static} mapItems(with response: ScenarioOneResponse?)
+}
+class "ScenarioOneItem" as ScenarioOneItem {
+    +init(title:cost:)
+
+}
+
+' STYLE START
+hide empty members
+skinparam shadowing false
+' STYLE END
+class "ScenarioOneViewController" as ScenarioOneViewController {
+    -cellFactory: ScenarioOneCellFactory
+    -viewModel: ScenarioOneViewModel
+    +init(with: ScenarioOneViewModel)
+    +init(coder:)
+    +viewDidLoad()
+    -loadResponse()
+    -handleError(_:)
+
+}
+class "ScenarioOneViewController" as ScenarioOneViewController1 << (E,orchid) extension >> {
+    +tableView(_:cellForRowAt:)
+    +tableView(_:numberOfRowsInSection:)
+
+}
+
+ScenarioOneViewController <.. ScenarioOneViewController1 : extension
+ScenarioOneViewController *-- ScenarioOneCellFactory
+ScenarioOneViewController *-- ScenarioOneViewModel
+
+' STYLE START
+hide empty members
+skinparam shadowing false
+' STYLE END
+class "ScenarioOneAbstractService" as ScenarioOneAbstractService << (P,GoldenRod) protocol >> {
+    +loadData(completion: (ScenarioOneResponse?, Error?)->())
+
+}
+class "ScenarioOneService" as ScenarioOneService {
+    +loadData(completion: (ScenarioOneResponse?, Error?)->())
+
+}
+class "ScenarioOneErrorService" as ScenarioOneErrorService {
+    +loadData(completion: (ScenarioOneResponse?, Error?)->())
+
+}
+class "ScenarioOneResponse" as ScenarioOneResponse {
+    +items: [ScenarioOneItemResponse]
+    +init(items:)
+
+}
+class "ScenarioOneItemResponse" as ScenarioOneItemResponse {
+    +init(title:cost:)
+
+}
+
+ScenarioOneService ..|> ScenarioOneAbstractService : conforms to
+ScenarioOneErrorService ..|> ScenarioOneAbstractService : conforms to
+ScenarioOneResponse "0" *-- "*" ScenarioOneItemResponse : contains
+
+' STYLE START
+hide empty members
+skinparam shadowing false
+' STYLE END
+class "ScenarioOneCellFactory" as ScenarioOneCellFactory {
+    +cell(for:in:at:)
+
+}
+
+@enduml

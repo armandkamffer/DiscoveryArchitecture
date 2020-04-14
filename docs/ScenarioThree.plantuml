@@ -1,0 +1,168 @@
+@startuml ScenarioThree
+' STYLE START
+hide empty members
+skinparam shadowing false
+' STYLE END
+class "ScenarioThreeMapper" as ScenarioThreeMapper {
+    +{static} mapGroups(with response: ScenarioThreeResponse?)
+    +{static} mapSummaryGroup(with response: ScenarioThreeResponse)
+    +{static} mapDetailGroup(with response: ScenarioThreeResponse)
+    +{static} mapMoreDetailGroup(with response: ScenarioThreeResponse)
+}
+class "ScenarioThreeGroupType" as ScenarioThreeGroupType << (E,LightSteelBlue) enum >> {
+
+}
+class "ScenarioThreeItemType" as ScenarioThreeItemType << (E,LightSteelBlue) enum >> {
+
+}
+class "ScenarioThreeGroup" as ScenarioThreeGroup {
+    +type: ScenarioThreeGroupType
+    +items: [ScenarioThreeItem]
+    +init(type:title:description:items:)
+
+}
+class "ScenarioThreeItem" as ScenarioThreeItem {
+    +type: ScenarioThreeItemType
+    +init(title:cost:type:)
+
+}
+
+ScenarioThreeGroup "0" *-- "*" ScenarioThreeItem : contains
+ScenarioThreeGroup *-- ScenarioThreeGroupType
+ScenarioThreeItem *-- ScenarioThreeItemType
+
+' STYLE START
+hide empty members
+skinparam shadowing false
+' STYLE END
+class "ScenarioThreeTableFactory" as ScenarioThreeTableFactory {
+    -cellCreators:[ScenarioThreeItemType:ScenarioThreeCellAbstractFactory]
+    -headerCreators:[ScenarioThreeGroupType:ScenarioThreeHeaderAbstractFactory]
+    +init()
+    +cell(for:in:at:)
+    +header(for:)
+    +headerHeight(for:)
+
+}
+
+ScenarioThreeTableFactory "0" *-- "*" ScenarioThreeCellAbstractFactory : contains
+ScenarioThreeTableFactory ..> ScenarioThreeItemType
+
+ScenarioThreeTableFactory "0" *-- "*" ScenarioThreeHeaderAbstractFactory : contains
+ScenarioThreeTableFactory ..> ScenarioThreeGroupType
+
+' STYLE START
+hide empty members
+skinparam shadowing false
+' STYLE END
+class "ScenarioThreeCellAbstractFactory" as ScenarioThreeCellAbstractFactory << (P,GoldenRod) protocol >> {
+    +cell(for:in:at:)
+
+}
+class "ScenarioThreeInfoCellFactory" as ScenarioThreeInfoCellFactory {
+    +cell(for:in:at:)
+
+}
+class "ScenarioThreeDescriptionCellFactory" as ScenarioThreeDescriptionCellFactory {
+    +cell(for:in:at:)
+
+}
+
+ScenarioThreeInfoCellFactory ..|> ScenarioThreeCellAbstractFactory : conforms to
+ScenarioThreeDescriptionCellFactory ..|> ScenarioThreeCellAbstractFactory : conforms to
+
+' STYLE START
+hide empty members
+skinparam shadowing false
+' STYLE END
+class "ScenarioThreeHeaderAbstractFactory" as ScenarioThreeHeaderAbstractFactory << (P,GoldenRod) protocol >> {
+    +header(for:)
+
+}
+class "ScenarioThreeSummaryHeaderFactory" as ScenarioThreeSummaryHeaderFactory {
+    +header(for:)
+
+}
+class "ScenarioThreeDetailHeaderFactory" as ScenarioThreeDetailHeaderFactory {
+    +header(for:)
+
+}
+
+ScenarioThreeSummaryHeaderFactory ..|> ScenarioThreeHeaderAbstractFactory : conforms to
+ScenarioThreeDetailHeaderFactory ..|> ScenarioThreeHeaderAbstractFactory : conforms to
+
+' STYLE START
+hide empty members
+skinparam shadowing false
+' STYLE END
+class "ScenarioThreeAbstractService" as ScenarioThreeAbstractService << (P,GoldenRod) protocol >> {
+    +loadData(completion: (ScenarioThreeResponse?, Error?)->())
+
+}
+class "ScenarioThreeService" as ScenarioThreeService {
+    +loadData(completion: (ScenarioThreeResponse?, Error?)->())
+
+}
+class "ScenarioThreeResponse" as ScenarioThreeResponse {
+    -detail: [ScenarioThreeDetailResponse]
+    +init(totalCost:detail:)
+
+}
+class "ScenarioThreeDetailResponse" as ScenarioThreeDetailResponse {
+    +init(title:cost:)
+
+}
+
+ScenarioThreeService ..|> ScenarioThreeAbstractService : conforms to
+ScenarioThreeResponse "0" *-- "1" ScenarioThreeDetailResponse : contains
+
+' STYLE START
+hide empty members
+skinparam shadowing false
+' STYLE END
+class "ScenarioThreeViewModel" as ScenarioThreeViewModel {
+    -service: ScenarioThreeAbstractService
+    -response: ScenarioThreeResponse?
+    -groups: [ScenarioThreeGroup]?
+    +configure(service: ScenarioThreeAbstractService)
+    +loadResponse(completion: (Error?)->())
+    +group(at:)
+    +itemInGroup(at:)
+    +itemCountInGroup(_:)
+
+}
+
+ScenarioThreeViewModel *-- ScenarioThreeAbstractService
+ScenarioThreeViewModel "0" o-- "1" ScenarioThreeResponse : contains
+ScenarioThreeViewModel "0" o-- "*" ScenarioThreeGroup : contains
+ScenarioThreeViewModel ..> ScenarioThreeMapper : uses
+
+' STYLE START
+hide empty members
+skinparam shadowing false
+' STYLE END
+class "ScenarioThreeViewController" as ScenarioThreeViewController {
+    -tableFactory: ScenarioThreeTableFactory
+    -viewModel: ScenarioThreeViewModel
+    +init(with: ScenarioThreeViewModel)
+    +init(coder:)
+    +viewDidLoad()
+    -loadResponse()
+    -handleError(_:)
+
+}
+class "ScenarioThreeViewController" as ScenarioThreeViewController1 << (E,orchid) extension >> {
+    +numberOfSections(in:)
+    +tableView(_:cellForRowAt:)
+    +tableView(_:numberOfRowsInSection:)
+    +tableView(_:viewForHeaderInSection:)
+    +tableView(_:heightForHeaderInSection:)
+    +tableView(_:viewForFooterInSection:)
+    +tableView(_:heightForFooterInSection:)
+
+}
+
+ScenarioThreeViewController <.. ScenarioThreeViewController1 : extension
+ScenarioThreeViewController *-- ScenarioThreeTableFactory
+ScenarioThreeViewController *-- ScenarioThreeViewModel
+@enduml

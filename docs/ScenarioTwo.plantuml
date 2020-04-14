@@ -1,0 +1,131 @@
+@startuml ScenarioTwo
+
+' STYLE START
+hide empty members
+skinparam shadowing false
+' STYLE END
+class "ScenarioTwoCellAbstractFactory" as ScenarioTwoCellAbstractFactory << (P,GoldenRod) protocol >> {
+    +cell(for:in:at:)
+
+}
+class "ScenarioTwoSummaryCellFactory" as ScenarioTwoSummaryCellFactory {
+    +cell(for:in:at:)
+
+}
+class "ScenarioTwoDetailCellFactory" as ScenarioTwoDetailCellFactory {
+    +cell(for:in:at:)
+
+}
+class "ScenarioTwoCellFactory" as ScenarioTwoCellFactory {
+    -cellCreators:[ScenarioTwoItemType:ScenarioTwoCellAbstractFactory]
+    +init()
+    +cell(for:in:at:)
+}
+
+ScenarioTwoSummaryCellFactory ..|> ScenarioTwoCellAbstractFactory : conforms to
+ScenarioTwoDetailCellFactory ..|> ScenarioTwoCellAbstractFactory : conforms to
+ScenarioTwoCellFactory "0" *-- "*" ScenarioTwoCellAbstractFactory : contains
+ScenarioTwoCellFactory ..> ScenarioTwoItemType
+
+' STYLE START
+hide empty members
+skinparam shadowing false
+' STYLE END
+class "ScenarioTwoMapper" as ScenarioTwoMapper {
+    +{static} mapGroups(with: ScenarioTwoResponse?)
+    +{static} mapSummaryGroup(with: ScenarioTwoResponse)
+    +{static} mapDetailGroup(with: ScenarioTwoResponse)
+}
+class "ScenarioTwoItemType" as ScenarioTwoItemType << (E,LightSteelBlue) enum >> {
+
+}
+class "ScenarioTwoGroup" as ScenarioTwoGroup {
+    +items: [ScenarioTwoItem]
+    +init(items:)
+
+}
+class "ScenarioTwoItem" as ScenarioTwoItem {
+    +type: ScenarioTwoItemType
+    +init(title:cost:type:)
+
+}
+
+ScenarioTwoGroup "0" *-- "*" ScenarioTwoItem : contains
+ScenarioTwoItem *-- ScenarioTwoItemType
+
+' STYLE START
+hide empty members
+skinparam shadowing false
+' STYLE END
+class "ScenarioTwoViewController" as ScenarioTwoViewController {
+    -cellFactory: ScenarioTwoCellFactory
+    -viewModel: ScenarioTwoViewModel
+    +init(with:)
+    +init(coder:)
+    +viewDidLoad()
+    -loadResponse()
+    -handleError(_:)
+
+}
+class "ScenarioTwoViewController" as ScenarioTwoViewController1 << (E,orchid) extension >> {
+    +numberOfSections(in:)
+    +tableView(_:cellForRowAt:)
+    +tableView(_:numberOfRowsInSection:)
+
+}
+
+ScenarioTwoViewController <.. ScenarioTwoViewController1 : extension
+ScenarioTwoViewController *-- ScenarioTwoCellFactory
+ScenarioTwoViewController *-- ScenarioTwoViewModel
+
+' STYLE START
+hide empty members
+skinparam shadowing false
+' STYLE END
+class "ScenarioTwoViewModel" as ScenarioTwoViewModel {
+    -service: ScenarioTwoAbstractService
+    -response: ScenarioTwoResponse?
+    -groups: [ScenarioTwoGroup]?
+    +configure(service: ScenarioTwoAbstractService)
+    +loadResponse(completion: (Error?)->())
+    +itemInGroup(at:)
+    +itemCountInGroup(_:)
+
+}
+
+ScenarioTwoViewModel *-- ScenarioTwoAbstractService
+ScenarioTwoViewModel "0" o-- "*" ScenarioTwoGroup : contains
+ScenarioTwoViewModel "0" o-- "1" ScenarioTwoResponse : contains
+ScenarioTwoViewModel ..> ScenarioTwoMapper : uses
+
+' STYLE START
+hide empty members
+skinparam shadowing false
+' STYLE END
+class "ScenarioTwoAbstractService" as ScenarioTwoAbstractService << (P,GoldenRod) protocol >> {
+    +loadData(completion: (ScenarioTwoResponse?, Error?)->())
+
+}
+class "ScenarioTwoService" as ScenarioTwoService {
+    +loadData(completion: (ScenarioTwoResponse?, Error?)->())
+
+}
+class "ScenarioTwoNilTotalCostService" as ScenarioTwoNilTotalCostService {
+    +loadData(completion: (ScenarioTwoResponse?, Error?)->())
+
+}
+class "ScenarioTwoResponse" as ScenarioTwoResponse {
+    +detail: [ScenarioTwoDetailResponse]
+    +init(totalCost:detail:)
+
+}
+class "ScenarioTwoDetailResponse" as ScenarioTwoDetailResponse {
+    +init(title:cost:)
+
+}
+
+ScenarioTwoService ..|> ScenarioTwoAbstractService : conforms to
+ScenarioTwoNilTotalCostService ..|> ScenarioTwoAbstractService : conforms to
+ScenarioTwoResponse "0" *-- "*" ScenarioTwoDetailResponse : contains
+
+@enduml
