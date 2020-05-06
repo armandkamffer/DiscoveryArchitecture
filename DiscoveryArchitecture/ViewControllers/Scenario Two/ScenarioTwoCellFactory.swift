@@ -30,7 +30,7 @@ class ScenarioTwoDetailCellFactory: ScenarioTwoCellAbstractFactory {
 }
 
 class ScenarioTwoCellFactory {
-    let cellCreators: [ScenarioTwoItemType:ScenarioTwoCellAbstractFactory]
+    private let cellCreators: [ScenarioTwoItemType:ScenarioTwoCellAbstractFactory]
     
     init() {
         cellCreators = [

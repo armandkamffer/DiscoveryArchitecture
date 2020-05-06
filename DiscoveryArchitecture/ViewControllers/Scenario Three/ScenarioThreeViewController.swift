@@ -35,6 +35,7 @@ class ScenarioThreeViewController: MEMTableViewController {
             self?.hideLoading()
             if let error = error {
                 self?.handleError(error)
+                return
             }
             self?.tableView.reloadData()
         }

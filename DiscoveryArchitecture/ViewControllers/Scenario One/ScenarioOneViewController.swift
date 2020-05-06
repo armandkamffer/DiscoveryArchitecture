@@ -31,10 +31,11 @@ class ScenarioOneViewController: MEMTableViewController {
     
     private func loadResponse() {
         showLoading()
-        viewModel.loadItems { [weak self] (error) in
+        viewModel.loadItems { [weak self] error in
             self?.hideLoading()
             if let error = error {
                 self?.handleError(error)
+                return
             }
             self?.tableView.reloadData()
         }

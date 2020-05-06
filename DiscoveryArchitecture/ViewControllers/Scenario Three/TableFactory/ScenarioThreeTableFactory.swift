@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 class ScenarioThreeTableFactory {
-    let cellCreators: [ScenarioThreeItemType:ScenarioThreeCellAbstractFactory]
-    let headerCreators: [ScenarioThreeGroupType:ScenarioThreeHeaderAbstractFactory]
+    private let cellCreators: [ScenarioThreeItemType:ScenarioThreeCellAbstractFactory]
+    private let headerCreators: [ScenarioThreeGroupType:ScenarioThreeHeaderAbstractFactory]
     
     init() {
         cellCreators = [
