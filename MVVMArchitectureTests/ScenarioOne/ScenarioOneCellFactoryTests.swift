@@ -1,5 +1,5 @@
 //
-//  ScenarioTwoCellFactoryTests.swift
+//  ScenarioOneCellFactoryTests.swift
 //  MVVMArchitectureTests
 //
 //  Created by Armand Kamffer on 2020/05/18.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class ScenarioTwoCellFactoryTests: XCTestCase {
+class ScenarioOneCellFactoryTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.

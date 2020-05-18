@@ -47,7 +47,7 @@
 		26A3B11E243F563D00C6FA49 /* ScenarioTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A3B11D243F563D00C6FA49 /* ScenarioTwo.swift */; };
 		26A3B120243F564800C6FA49 /* ScenarioThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A3B11F243F564800C6FA49 /* ScenarioThree.swift */; };
 		26E990622472A35900351864 /* ScenarioOneMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E990612472A35900351864 /* ScenarioOneMapperTests.swift */; };
-		26E990642472A37300351864 /* ScenarioTwoCellFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E990632472A37300351864 /* ScenarioTwoCellFactoryTests.swift */; };
+		26E990642472A37300351864 /* ScenarioOneCellFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E990632472A37300351864 /* ScenarioOneCellFactoryTests.swift */; };
 		26E990662472A38C00351864 /* ScenarioTwoMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E990652472A38C00351864 /* ScenarioTwoMapperTests.swift */; };
 		26E990682472A39E00351864 /* ScenarioTwoCellFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E990672472A39E00351864 /* ScenarioTwoCellFactoryTests.swift */; };
 		26E9906A2472A3BA00351864 /* ScenarioThreeMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E990692472A3BA00351864 /* ScenarioThreeMapperTests.swift */; };
@@ -110,9 +110,8 @@
 		26A3B11F243F564800C6FA49 /* ScenarioThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioThree.swift; sourceTree = "<group>"; };
 		26E990512472A2A600351864 /* MVVMArchitectureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVVMArchitectureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		26E990552472A2A700351864 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		26E9905E2472A32F00351864 /* MVVMArchitectureTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MVVMArchitectureTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		26E990612472A35900351864 /* ScenarioOneMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioOneMapperTests.swift; sourceTree = "<group>"; };
-		26E990632472A37300351864 /* ScenarioTwoCellFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioTwoCellFactoryTests.swift; sourceTree = "<group>"; };
+		26E990632472A37300351864 /* ScenarioOneCellFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioOneCellFactoryTests.swift; sourceTree = "<group>"; };
 		26E990652472A38C00351864 /* ScenarioTwoMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioTwoMapperTests.swift; sourceTree = "<group>"; };
 		26E990672472A39E00351864 /* ScenarioTwoCellFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioTwoCellFactoryTests.swift; sourceTree = "<group>"; };
 		26E990692472A3BA00351864 /* ScenarioThreeMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioThreeMapperTests.swift; sourceTree = "<group>"; };
@@ -291,7 +290,6 @@
 				26E9905C2472A2E100351864 /* ScenarioTwo */,
 				26E9905D2472A2E800351864 /* ScenarioThree */,
 				26E990552472A2A700351864 /* Info.plist */,
-				26E9905E2472A32F00351864 /* MVVMArchitectureTests-Bridging-Header.h */,
 			);
 			path = MVVMArchitectureTests;
 			sourceTree = "<group>";
@@ -300,7 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				26E990612472A35900351864 /* ScenarioOneMapperTests.swift */,
-				26E990632472A37300351864 /* ScenarioTwoCellFactoryTests.swift */,
+				26E990632472A37300351864 /* ScenarioOneCellFactoryTests.swift */,
 			);
 			path = ScenarioOne;
 			sourceTree = "<group>";
@@ -473,7 +471,7 @@
 				26E990702472A3EB00351864 /* ScenarioThreeHeaderFactoryTests.swift in Sources */,
 				26E990622472A35900351864 /* ScenarioOneMapperTests.swift in Sources */,
 				26E990662472A38C00351864 /* ScenarioTwoMapperTests.swift in Sources */,
-				26E990642472A37300351864 /* ScenarioTwoCellFactoryTests.swift in Sources */,
+				26E990642472A37300351864 /* ScenarioOneCellFactoryTests.swift in Sources */,
 				26E990682472A39E00351864 /* ScenarioTwoCellFactoryTests.swift in Sources */,
 				26E9906E2472A3DC00351864 /* ScenarioThreeCellFactoryTests.swift in Sources */,
 				26E9906C2472A3CA00351864 /* ScenarioThreeTableFactoryTests.swift in Sources */,
@@ -638,6 +636,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = za.co.armandkamffer.MVVMArchitecture;
 				PRODUCT_NAME = MVVMArchitecture;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -656,6 +656,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = za.co.armandkamffer.MVVMArchitecture;
 				PRODUCT_NAME = MVVMArchitecture;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -676,8 +678,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = za.co.armandkamffer.MVVMArchitectureTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "MVVMArchitectureTests/ScenarioOne/MVVMArchitectureTests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MVVMArchitecture.app/MVVMArchitecture";
@@ -699,7 +702,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = za.co.armandkamffer.MVVMArchitectureTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "MVVMArchitectureTests/ScenarioOne/MVVMArchitectureTests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MVVMArchitecture.app/MVVMArchitecture";
