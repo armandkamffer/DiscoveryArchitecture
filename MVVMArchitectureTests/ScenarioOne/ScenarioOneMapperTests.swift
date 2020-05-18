@@ -21,7 +21,8 @@ class ScenarioOneMapperTests: XCTestCase {
         // Then: Three items should be mapped and the first should have specific mapped values
         XCTAssertEqual(items.count, 3)
         XCTAssertEqual(items.first?.title, "Test1")
-        XCTAssert(items.first?.cost.count ?? 0 > 0, "Cost value not mapped to a currency value")
+        XCTAssert(items.first?.cost.count ?? 0 > 1, "Cost value not mapped to a currency value")
+        XCTAssertEqual(items.first?.cost.first, "R")
     }
     
     func testMapItemsEmptyResponse() {
