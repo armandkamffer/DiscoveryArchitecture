@@ -25,19 +25,23 @@ class ScenarioTwoMapper {
         guard let totalCost = response.totalCost else {
             return nil
         }
-        let title = "All benefits"
-        let totalCostText = totalCost.currency ?? "-"
+        let totalCostText = totalCost.currency ?? .placeholder
         return ScenarioTwoGroup(items: [
-            ScenarioTwoItem(title: title, cost: totalCostText, type: .summary)
+            ScenarioTwoItem(title: .allBenefits, cost: totalCostText, type: .summary)
         ])
     }
     
     static func mapDetailGroup(with response: ScenarioTwoResponse) -> ScenarioTwoGroup {
         let items = response.detail.map {
-            ScenarioTwoItem(title: $0.title, cost: $0.cost.currency ?? "-", type: .detail)
+            ScenarioTwoItem(title: $0.title, cost: $0.cost.currency ?? .placeholder, type: .detail)
         }
         return ScenarioTwoGroup(items: items)
     }
+}
+
+fileprivate extension String {
+    static let allBenefits = "All benefits"
+    static let placeholder = "-"
 }
 
 enum ScenarioTwoItemType {

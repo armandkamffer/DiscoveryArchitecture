@@ -33,7 +33,7 @@ class ScenarioTwoViewModel {
         return groups?.element(at: indexPath.section)?.items.element(at: indexPath.row)
     }
     
-    func itemCountInGroup(_ section: Int) -> Int {
-        return groups?.element(at: section)?.items.count ?? 0
+    func itemCountInGroup(_ group: Int) -> Int {
+        return groups?.element(at: group)?.items.count ?? 0
     }
 }

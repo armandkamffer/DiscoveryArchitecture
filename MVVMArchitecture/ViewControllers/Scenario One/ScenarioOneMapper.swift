@@ -14,9 +14,13 @@ class ScenarioOneMapper {
             return []
         }
         return response.items.map {
-            ScenarioOneItem(title: $0.title, cost: $0.cost.currency ?? "-")
+            ScenarioOneItem(title: $0.title, cost: $0.cost.currency ?? .placeholder)
         }
     }
+}
+
+fileprivate extension String {
+    static let placeholder = "-"
 }
 
 class ScenarioOneItem {

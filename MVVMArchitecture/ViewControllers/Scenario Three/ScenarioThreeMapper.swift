@@ -26,17 +26,16 @@ class ScenarioThreeMapper {
         guard let totalCost = response.totalCost else {
             return nil
         }
-        let title = "All benefits"
-        let totalCostText = totalCost.currency ?? "-"
-        let item = ScenarioThreeItem(title: title, cost: totalCostText, type: .info)
-        return ScenarioThreeGroup(type: .summary, title: "Summary", description: nil, items: [item])
+        let totalCostText = totalCost.currency ?? .placeholder
+        let item = ScenarioThreeItem(title: .allBenefits, cost: totalCostText, type: .info)
+        return ScenarioThreeGroup(type: .summary, title: .summary, description: nil, items: [item])
     }
     
     static func mapDetailGroup(with response: ScenarioThreeResponse) -> ScenarioThreeGroup {
         let items = response.detail.map {
-            ScenarioThreeItem(title: $0.title, cost: $0.cost.currency ?? "-", type: .description)
+            ScenarioThreeItem(title: $0.title, cost: $0.cost.currency ?? .placeholder, type: .description)
         }
-        return ScenarioThreeGroup(type: .detail, title: "Detail", description: "The following is a breakdown of your benefit costs", items: items)
+        return ScenarioThreeGroup(type: .detail, title: .detail, description: .detailDescription, items: items)
     }
     
     static func mapMoreDetailGroup(with response: ScenarioThreeResponse) -> ScenarioThreeGroup {
@@ -44,11 +43,20 @@ class ScenarioThreeMapper {
         let items: [ScenarioThreeItem] = response.detail.map {
             let type: ScenarioThreeItemType = isInfo ? .info : .description
             isInfo.toggle()
-            return ScenarioThreeItem(title: $0.title, cost: $0.cost.currency ?? "-", type: type)
+            return ScenarioThreeItem(title: $0.title, cost: $0.cost.currency ?? .placeholder, type: type)
         }
         return ScenarioThreeGroup(type: .moreDetail, title: nil, description: nil, items: items)
     }
 }
+
+fileprivate extension String {
+    static let allBenefits = "All benefits"
+    static let summary = "Summary"
+    static let detail = "Detail"
+    static let detailDescription = "The following is a breakdown of your benefit costs"
+    static let placeholder = "-"
+}
+
 
 enum ScenarioThreeGroupType {
     case summary
