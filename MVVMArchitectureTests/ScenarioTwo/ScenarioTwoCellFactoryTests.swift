@@ -70,24 +70,3 @@ fileprivate class Mocks {
     static let detailItem = ScenarioTwoItem(title: "Detail", cost: "R5000", type: .detail)
     static let summaryItem = ScenarioTwoItem(title: "Summary", cost: "R5000", type: .summary)
 }
-
-
-
-class ScenarioTwoCellFactory {
-    private let cellCreators: [ScenarioTwoItemType:ScenarioTwoCellAbstractFactory]
-    
-    init() {
-        cellCreators = [
-            .summary: ScenarioTwoSummaryCellFactory(),
-            .detail: ScenarioTwoDetailCellFactory()
-        ]
-    }
-    
-    func cell(for item: ScenarioTwoItem?, in tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell {
-        guard let item = item,
-            let creator = cellCreators[item.type] else {
-                return UITableViewCell()
-        }
-        return creator.cell(for: item, in: tableView, at: indexPath)
-    }
-}

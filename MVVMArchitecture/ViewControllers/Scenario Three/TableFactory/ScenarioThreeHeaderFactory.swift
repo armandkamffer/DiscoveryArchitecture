@@ -15,8 +15,10 @@ protocol ScenarioThreeHeaderAbstractFactory {
 
 class ScenarioThreeSummaryHeaderFactory: ScenarioThreeHeaderAbstractFactory {
     func header(for group: ScenarioThreeGroup?) -> UIView? {
-        guard let header = TitleHeaderView.headerView(),
-            let title = group?.title else {
+        guard
+            let header = TitleHeaderView.headerView(),
+            let title = group?.title
+        else {
             return nil
         }
         header.configure(title: title)
@@ -26,9 +28,11 @@ class ScenarioThreeSummaryHeaderFactory: ScenarioThreeHeaderAbstractFactory {
 
 class ScenarioThreeDetailHeaderFactory: ScenarioThreeHeaderAbstractFactory {
     func header(for group: ScenarioThreeGroup?) -> UIView? {
-        guard let header = TitleDescriptionHeaderView.headerView(),
+        guard
+            let header = TitleDescriptionHeaderView.headerView(),
             let title = group?.title,
-            let description = group?.description else {
+            let description = group?.description
+        else {
             return nil
         }
         header.configure(title: title, description: description)
