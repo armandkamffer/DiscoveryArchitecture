@@ -46,7 +46,25 @@
 		26A3B11C243F545B00C6FA49 /* ScenarioOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A3B11B243F545B00C6FA49 /* ScenarioOne.swift */; };
 		26A3B11E243F563D00C6FA49 /* ScenarioTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A3B11D243F563D00C6FA49 /* ScenarioTwo.swift */; };
 		26A3B120243F564800C6FA49 /* ScenarioThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A3B11F243F564800C6FA49 /* ScenarioThree.swift */; };
+		26E990622472A35900351864 /* ScenarioOneMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E990612472A35900351864 /* ScenarioOneMapperTests.swift */; };
+		26E990642472A37300351864 /* ScenarioTwoCellFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E990632472A37300351864 /* ScenarioTwoCellFactoryTests.swift */; };
+		26E990662472A38C00351864 /* ScenarioTwoMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E990652472A38C00351864 /* ScenarioTwoMapperTests.swift */; };
+		26E990682472A39E00351864 /* ScenarioTwoCellFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E990672472A39E00351864 /* ScenarioTwoCellFactoryTests.swift */; };
+		26E9906A2472A3BA00351864 /* ScenarioThreeMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E990692472A3BA00351864 /* ScenarioThreeMapperTests.swift */; };
+		26E9906C2472A3CA00351864 /* ScenarioThreeTableFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E9906B2472A3CA00351864 /* ScenarioThreeTableFactoryTests.swift */; };
+		26E9906E2472A3DC00351864 /* ScenarioThreeCellFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E9906D2472A3DC00351864 /* ScenarioThreeCellFactoryTests.swift */; };
+		26E990702472A3EB00351864 /* ScenarioThreeHeaderFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E9906F2472A3EB00351864 /* ScenarioThreeHeaderFactoryTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		26E990562472A2A700351864 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26A3B009243EF86300C6FA49 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 26A3B010243EF86400C6FA49;
+			remoteInfo = MVVMArchitecture;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		26A3B011243EF86400C6FA49 /* MVVMArchitecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVMArchitecture.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,10 +108,28 @@
 		26A3B11B243F545B00C6FA49 /* ScenarioOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioOne.swift; sourceTree = "<group>"; };
 		26A3B11D243F563D00C6FA49 /* ScenarioTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioTwo.swift; sourceTree = "<group>"; };
 		26A3B11F243F564800C6FA49 /* ScenarioThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioThree.swift; sourceTree = "<group>"; };
+		26E990512472A2A600351864 /* MVVMArchitectureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVVMArchitectureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		26E990552472A2A700351864 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26E9905E2472A32F00351864 /* MVVMArchitectureTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MVVMArchitectureTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		26E990612472A35900351864 /* ScenarioOneMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioOneMapperTests.swift; sourceTree = "<group>"; };
+		26E990632472A37300351864 /* ScenarioTwoCellFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioTwoCellFactoryTests.swift; sourceTree = "<group>"; };
+		26E990652472A38C00351864 /* ScenarioTwoMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioTwoMapperTests.swift; sourceTree = "<group>"; };
+		26E990672472A39E00351864 /* ScenarioTwoCellFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioTwoCellFactoryTests.swift; sourceTree = "<group>"; };
+		26E990692472A3BA00351864 /* ScenarioThreeMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioThreeMapperTests.swift; sourceTree = "<group>"; };
+		26E9906B2472A3CA00351864 /* ScenarioThreeTableFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioThreeTableFactoryTests.swift; sourceTree = "<group>"; };
+		26E9906D2472A3DC00351864 /* ScenarioThreeCellFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioThreeCellFactoryTests.swift; sourceTree = "<group>"; };
+		26E9906F2472A3EB00351864 /* ScenarioThreeHeaderFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioThreeHeaderFactoryTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		26A3B00E243EF86400C6FA49 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26E9904E2472A2A600351864 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -106,6 +142,7 @@
 		26A3B008243EF86300C6FA49 = {
 			isa = PBXGroup;
 			children = (
+				26E990522472A2A700351864 /* MVVMArchitectureTests */,
 				26A3B013243EF86400C6FA49 /* MVVMArchitecture */,
 				26A3B012243EF86400C6FA49 /* Products */,
 			);
@@ -115,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				26A3B011243EF86400C6FA49 /* MVVMArchitecture.app */,
+				26E990512472A2A600351864 /* MVVMArchitectureTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -246,6 +284,47 @@
 			path = Landing;
 			sourceTree = "<group>";
 		};
+		26E990522472A2A700351864 /* MVVMArchitectureTests */ = {
+			isa = PBXGroup;
+			children = (
+				26E9905B2472A2DA00351864 /* ScenarioOne */,
+				26E9905C2472A2E100351864 /* ScenarioTwo */,
+				26E9905D2472A2E800351864 /* ScenarioThree */,
+				26E990552472A2A700351864 /* Info.plist */,
+				26E9905E2472A32F00351864 /* MVVMArchitectureTests-Bridging-Header.h */,
+			);
+			path = MVVMArchitectureTests;
+			sourceTree = "<group>";
+		};
+		26E9905B2472A2DA00351864 /* ScenarioOne */ = {
+			isa = PBXGroup;
+			children = (
+				26E990612472A35900351864 /* ScenarioOneMapperTests.swift */,
+				26E990632472A37300351864 /* ScenarioTwoCellFactoryTests.swift */,
+			);
+			path = ScenarioOne;
+			sourceTree = "<group>";
+		};
+		26E9905C2472A2E100351864 /* ScenarioTwo */ = {
+			isa = PBXGroup;
+			children = (
+				26E990652472A38C00351864 /* ScenarioTwoMapperTests.swift */,
+				26E990672472A39E00351864 /* ScenarioTwoCellFactoryTests.swift */,
+			);
+			path = ScenarioTwo;
+			sourceTree = "<group>";
+		};
+		26E9905D2472A2E800351864 /* ScenarioThree */ = {
+			isa = PBXGroup;
+			children = (
+				26E990692472A3BA00351864 /* ScenarioThreeMapperTests.swift */,
+				26E9906B2472A3CA00351864 /* ScenarioThreeTableFactoryTests.swift */,
+				26E9906D2472A3DC00351864 /* ScenarioThreeCellFactoryTests.swift */,
+				26E9906F2472A3EB00351864 /* ScenarioThreeHeaderFactoryTests.swift */,
+			);
+			path = ScenarioThree;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -266,6 +345,24 @@
 			productReference = 26A3B011243EF86400C6FA49 /* MVVMArchitecture.app */;
 			productType = "com.apple.product-type.application";
 		};
+		26E990502472A2A600351864 /* MVVMArchitectureTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26E9905A2472A2A700351864 /* Build configuration list for PBXNativeTarget "MVVMArchitectureTests" */;
+			buildPhases = (
+				26E9904D2472A2A600351864 /* Sources */,
+				26E9904E2472A2A600351864 /* Frameworks */,
+				26E9904F2472A2A600351864 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				26E990572472A2A700351864 /* PBXTargetDependency */,
+			);
+			name = MVVMArchitectureTests;
+			productName = MVVMArchitectureTests;
+			productReference = 26E990512472A2A600351864 /* MVVMArchitectureTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -278,6 +375,11 @@
 				TargetAttributes = {
 					26A3B010243EF86400C6FA49 = {
 						CreatedOnToolsVersion = 11.3.1;
+					};
+					26E990502472A2A600351864 = {
+						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
+						TestTargetID = 26A3B010243EF86400C6FA49;
 					};
 				};
 			};
@@ -295,6 +397,7 @@
 			projectRoot = "";
 			targets = (
 				26A3B010243EF86400C6FA49 /* MVVMArchitecture */,
+				26E990502472A2A600351864 /* MVVMArchitectureTests */,
 			);
 		};
 /* End PBXProject section */
@@ -311,6 +414,13 @@
 				26A3B0EB243F249500C6FA49 /* TitleInfoTableViewCell.xib in Resources */,
 				26A3B0FF243F394500C6FA49 /* TitleDescriptionTableViewCell.xib in Resources */,
 				26A3B01C243EF86400C6FA49 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26E9904F2472A2A600351864 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,7 +466,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		26E9904D2472A2A600351864 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26E990702472A3EB00351864 /* ScenarioThreeHeaderFactoryTests.swift in Sources */,
+				26E990622472A35900351864 /* ScenarioOneMapperTests.swift in Sources */,
+				26E990662472A38C00351864 /* ScenarioTwoMapperTests.swift in Sources */,
+				26E990642472A37300351864 /* ScenarioTwoCellFactoryTests.swift in Sources */,
+				26E990682472A39E00351864 /* ScenarioTwoCellFactoryTests.swift in Sources */,
+				26E9906E2472A3DC00351864 /* ScenarioThreeCellFactoryTests.swift in Sources */,
+				26E9906C2472A3CA00351864 /* ScenarioThreeTableFactoryTests.swift in Sources */,
+				26E9906A2472A3BA00351864 /* ScenarioThreeMapperTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		26E990572472A2A700351864 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 26A3B010243EF86400C6FA49 /* MVVMArchitecture */;
+			targetProxy = 26E990562472A2A700351864 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		26A3B01A243EF86400C6FA49 /* Main.storyboard */ = {
@@ -528,6 +661,51 @@
 			};
 			name = Release;
 		};
+		26E990582472A2A700351864 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5NLD7MNS2H;
+				INFOPLIST_FILE = MVVMArchitectureTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = za.co.armandkamffer.MVVMArchitectureTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MVVMArchitectureTests/ScenarioOne/MVVMArchitectureTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MVVMArchitecture.app/MVVMArchitecture";
+			};
+			name = Debug;
+		};
+		26E990592472A2A700351864 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5NLD7MNS2H;
+				INFOPLIST_FILE = MVVMArchitectureTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = za.co.armandkamffer.MVVMArchitectureTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MVVMArchitectureTests/ScenarioOne/MVVMArchitectureTests-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MVVMArchitecture.app/MVVMArchitecture";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -545,6 +723,15 @@
 			buildConfigurations = (
 				26A3B026243EF86700C6FA49 /* Debug */,
 				26A3B027243EF86700C6FA49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26E9905A2472A2A700351864 /* Build configuration list for PBXNativeTarget "MVVMArchitectureTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26E990582472A2A700351864 /* Debug */,
+				26E990592472A2A700351864 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
