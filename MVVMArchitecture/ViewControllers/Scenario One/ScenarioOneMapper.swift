@@ -10,9 +10,7 @@ import Foundation
 
 class ScenarioOneMapper {
     static func mapItems(with response: ScenarioOneResponse?) -> [ScenarioOneItem] {
-        guard let response = response else {
-            return []
-        }
+        guard let response = response else { return [] }
         return response.items.map {
             ScenarioOneItem(title: $0.title, cost: $0.cost.currency ?? .placeholder)
         }

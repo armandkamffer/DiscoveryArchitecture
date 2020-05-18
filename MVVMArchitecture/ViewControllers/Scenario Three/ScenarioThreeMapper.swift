@@ -10,9 +10,7 @@ import Foundation
 
 class ScenarioThreeMapper {
     static func mapGroups(with response: ScenarioThreeResponse?) -> [ScenarioThreeGroup] {
-        guard let response = response else {
-            return []
-        }
+        guard let response = response else { return [] }
         var groups = [ScenarioThreeGroup]()
         if let summaryGroup = mapSummaryGroup(with: response) {
             groups.append(summaryGroup)
@@ -23,9 +21,7 @@ class ScenarioThreeMapper {
     }
     
     static func mapSummaryGroup(with response: ScenarioThreeResponse) -> ScenarioThreeGroup? {
-        guard let totalCost = response.totalCost else {
-            return nil
-        }
+        guard let totalCost = response.totalCost else { return nil }
         let totalCostText = totalCost.currency ?? .placeholder
         let item = ScenarioThreeItem(title: .allBenefits, cost: totalCostText, type: .info)
         return ScenarioThreeGroup(type: .summary, title: .summary, description: nil, items: [item])
