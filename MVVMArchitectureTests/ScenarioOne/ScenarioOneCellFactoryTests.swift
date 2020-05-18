@@ -7,27 +7,42 @@
 //
 
 import XCTest
+@testable import MVVMArchitecture
 
 class ScenarioOneCellFactoryTests: XCTestCase {
-
+    var mockTableView: UITableView!
+    
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        super.setUp()
+        mockTableView = UITableView()
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func testCellWithValidData() {
+        // Given: a mock item and an indexPath
+        let mockItem = Mocks.scenarioOneItem
+        let indexPath = IndexPath(item: 0, section: 0)
+        
+        // When: The cell is mapped
+        let cell = ScenarioOneCellFactory().cell(for: mockItem, in: mockTableView, at: indexPath)
+        
+        // Then: TitleInfoTableViewCell is expected as the cell type
+        XCTAssert(cell.isMember(of: TitleInfoTableViewCell.self))
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func testCellWithValidNilData() {
+        // Given: a mock item and an indexPath
+        let mockItem = Mocks.nilScenarioOneItem
+        let indexPath = IndexPath(item: 0, section: 0)
+        
+        // When: The cell is mapped
+        let cell = ScenarioOneCellFactory().cell(for: mockItem, in: mockTableView, at: indexPath)
+        
+        // Then: UITableViewCell is expected as the cell type
+        XCTAssert(cell.isMember(of: UITableViewCell.self))
     }
+}
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
+fileprivate class Mocks {
+    static let scenarioOneItem = ScenarioOneItem(title: "Test", cost: "R1000")
+    static let nilScenarioOneItem: ScenarioOneItem? = nil
 }
