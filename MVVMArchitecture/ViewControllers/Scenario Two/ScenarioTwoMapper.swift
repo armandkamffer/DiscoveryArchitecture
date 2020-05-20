@@ -36,8 +36,8 @@ class ScenarioTwoMapper {
 }
 
 fileprivate extension String {
-    static let allBenefits = "All benefits"
-    static let placeholder = "-"
+    static let allBenefits = NSLocalizedString("ALL_BENEFITS", comment: "All benefits")
+    static let placeholder = NSLocalizedString("PLACEHOLDER", comment: "-")
 }
 
 enum ScenarioTwoItemType {

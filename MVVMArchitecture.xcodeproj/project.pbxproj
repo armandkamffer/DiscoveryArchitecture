@@ -58,6 +58,7 @@
 		26E990772472AE3200351864 /* TitleDescriptionTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E990762472AE3200351864 /* TitleDescriptionTableViewCellTests.swift */; };
 		26E9907A2472B2FC00351864 /* TitleHeaderViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E990792472B2FC00351864 /* TitleHeaderViewTests.swift */; };
 		26E9907C2472B30F00351864 /* TitleDescriptionHeaderViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E9907B2472B30F00351864 /* TitleDescriptionHeaderViewTests.swift */; };
+		26E9929B24752D0100351864 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26E9929A24752D0100351864 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +127,7 @@
 		26E990762472AE3200351864 /* TitleDescriptionTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleDescriptionTableViewCellTests.swift; sourceTree = "<group>"; };
 		26E990792472B2FC00351864 /* TitleHeaderViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleHeaderViewTests.swift; sourceTree = "<group>"; };
 		26E9907B2472B30F00351864 /* TitleDescriptionHeaderViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleDescriptionHeaderViewTests.swift; sourceTree = "<group>"; };
+		26E9929A24752D0100351864 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,14 +169,13 @@
 		26A3B013243EF86400C6FA49 /* MVVMArchitecture */ = {
 			isa = PBXGroup;
 			children = (
+				26E9929924752CE300351864 /* Resources */,
 				26A3B11A243F544900C6FA49 /* Landing */,
 				26A3B0E7243F247C00C6FA49 /* Views */,
 				26A3B036243F05E400C6FA49 /* Extensions */,
 				26A3B028243EF8AB00C6FA49 /* ViewControllers */,
 				26A3B014243EF86400C6FA49 /* AppDelegate.swift */,
 				26A3B016243EF86400C6FA49 /* SceneDelegate.swift */,
-				26A3B01D243EF86700C6FA49 /* Assets.xcassets */,
-				26A3B01F243EF86700C6FA49 /* LaunchScreen.storyboard */,
 				26A3B022243EF86700C6FA49 /* Info.plist */,
 			);
 			path = MVVMArchitecture;
@@ -359,6 +360,16 @@
 			path = Groups;
 			sourceTree = "<group>";
 		};
+		26E9929924752CE300351864 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				26A3B01D243EF86700C6FA49 /* Assets.xcassets */,
+				26A3B01F243EF86700C6FA49 /* LaunchScreen.storyboard */,
+				26E9929A24752D0100351864 /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -446,6 +457,7 @@
 				26A3B01E243EF86700C6FA49 /* Assets.xcassets in Resources */,
 				26A3B119243F491100C6FA49 /* TitleDescriptionHeaderView.xib in Resources */,
 				26A3B0EB243F249500C6FA49 /* TitleInfoTableViewCell.xib in Resources */,
+				26E9929B24752D0100351864 /* Localizable.strings in Resources */,
 				26A3B0FF243F394500C6FA49 /* TitleDescriptionTableViewCell.xib in Resources */,
 				26A3B01C243EF86400C6FA49 /* Main.storyboard in Resources */,
 			);

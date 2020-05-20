@@ -40,8 +40,10 @@ class ScenarioTwoCellFactory {
     }
     
     func cell(for item: ScenarioTwoItem?, in tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell {
-        guard let item = item,
-            let creator = cellCreators[item.type] else {
+        guard
+            let item = item,
+            let creator = cellCreators[item.type]
+        else {
             return UITableViewCell()
         }
         return creator.cell(for: item, in: tableView, at: indexPath)

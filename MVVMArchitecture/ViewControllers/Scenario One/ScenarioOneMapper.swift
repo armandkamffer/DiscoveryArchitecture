@@ -18,7 +18,7 @@ class ScenarioOneMapper {
 }
 
 fileprivate extension String {
-    static let placeholder = "-"
+    static let placeholder = NSLocalizedString("PLACEHOLDER", comment: "-")
 }
 
 class ScenarioOneItem {

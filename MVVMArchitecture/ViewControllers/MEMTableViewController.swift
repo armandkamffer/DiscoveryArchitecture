@@ -12,7 +12,7 @@ import UIKit
 class MEMTableViewController: UITableViewController {
     func showLoading() {
         DispatchQueue.main.async {
-            let alert = UIAlertController(title: nil, message: "Loading...", preferredStyle: .alert)
+            let alert = UIAlertController(title: nil, message: .loading, preferredStyle: .alert)
 
             let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
             loadingIndicator.hidesWhenStopped = true
@@ -30,9 +30,9 @@ class MEMTableViewController: UITableViewController {
     
     func showError(retryAction: @escaping ()->()) {
         DispatchQueue.main.async {
-            let alert = UIAlertController(title: "Error", message: "Loading...", preferredStyle: .alert)
-            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-            let retryAction = UIAlertAction(title: "Retry", style: .default) { _ in
+            let alert = UIAlertController(title: .error, message: .failedToLoad, preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: .cancel, style: .cancel, handler: nil)
+            let retryAction = UIAlertAction(title: .retry, style: .default) { _ in
                 retryAction()
             }
             alert.addAction(cancelAction)
@@ -40,4 +40,12 @@ class MEMTableViewController: UITableViewController {
             self.present(alert, animated: true, completion: nil)
         }
     }
+}
+
+fileprivate extension String {
+    static let error = NSLocalizedString("ERROR", comment: "Error")
+    static let failedToLoad = NSLocalizedString("FAILED_TO_LOAD", comment: "Failed to load")
+    static let loading = NSLocalizedString("LOADING", comment: "Loading...")
+    static let cancel = NSLocalizedString("CANCEL", comment: "Cancel")
+    static let retry = NSLocalizedString("RETRY", comment: "Retry")
 }

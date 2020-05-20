@@ -46,11 +46,11 @@ class ScenarioThreeMapper {
 }
 
 fileprivate extension String {
-    static let allBenefits = "All benefits"
-    static let summary = "Summary"
-    static let detail = "Detail"
-    static let detailDescription = "The following is a breakdown of your benefit costs"
-    static let placeholder = "-"
+    static let allBenefits = NSLocalizedString("ALL_BENEFITS", comment: "All benefits")
+    static let summary = NSLocalizedString("SUMMARY", comment: "Summary")
+    static let detail = NSLocalizedString("DETAIL", comment: "Detail")
+    static let detailDescription = NSLocalizedString("COST_BREAKDOWN_DESCRIPTION", comment: "The following is a breakdown of your benefit costs")
+    static let placeholder = NSLocalizedString("PLACEHOLDER", comment: "-")
 }
 
 
