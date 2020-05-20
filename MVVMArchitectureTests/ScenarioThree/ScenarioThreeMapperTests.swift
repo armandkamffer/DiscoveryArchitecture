@@ -51,6 +51,10 @@ class ScenarioThreeMapperTests: XCTestCase {
         let group = ScenarioThreeMapper.mapSummaryGroup(with: mockResponse)
         
         // Then: One item should be mapped and it should have specific mapped values
+        XCTAssertEqual(group?.type, .summary)
+        XCTAssertEqual(group?.title, "Summary")
+        XCTAssertNil(group?.description)
+        
         XCTAssertEqual(group?.items.count, 1)
         XCTAssertEqual(group?.items.first?.title, "All benefits")
         XCTAssertEqual(group?.items.first?.type, ScenarioThreeItemType.info)
@@ -65,7 +69,7 @@ class ScenarioThreeMapperTests: XCTestCase {
         // When: The summary group is mapped
         let group = ScenarioThreeMapper.mapSummaryGroup(with: mockResponse)
         
-        // Then: Three items should be mapped and the first should have specific mapped values
+        // Then: The group should be nil
         XCTAssertNil(group)
     }
     
@@ -77,6 +81,10 @@ class ScenarioThreeMapperTests: XCTestCase {
         let group = ScenarioThreeMapper.mapDetailGroup(with: mockResponse)
         
         // Then: Three items should be mapped and the first should have specific mapped values
+        XCTAssertEqual(group.type, .detail)
+        XCTAssertEqual(group.title, "Detail")
+        XCTAssertEqual(group.description, "The following is a breakdown of your benefit costs")
+        
         XCTAssertEqual(group.items.count, 3)
         XCTAssertEqual(group.items.first?.title, "Test1")
         XCTAssertEqual(group.items.first?.type, ScenarioThreeItemType.description)
@@ -103,6 +111,10 @@ class ScenarioThreeMapperTests: XCTestCase {
         let group = ScenarioThreeMapper.mapMoreDetailGroup(with: mockResponse)
         
         // Then: Three items should be mapped and the first should have specific mapped values
+        XCTAssertEqual(group.type, .moreDetail)
+        XCTAssertNil(group.title)
+        XCTAssertNil(group.description)
+        
         XCTAssertEqual(group.items.count, 3)
         XCTAssertEqual(group.items.first?.title, "Test1")
         XCTAssert(group.items.first?.cost.count ?? 0 > 1, "Cost value not mapped to a currency value")

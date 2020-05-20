@@ -86,6 +86,17 @@ class ScenarioThreeTableFactoryTests: XCTestCase {
         XCTAssertNil(header)
     }
     
+    func testHeaderNilData() {
+        // Given: A mock nil group
+        let mockGroup = Mocks.nilHeaderGroup
+        
+        // When: A header view is created
+        let header = ScenarioThreeTableFactory().header(for: mockGroup)
+        
+        // Then: Nil is returned
+        XCTAssertNil(header)
+    }
+    
     func testHeaderHeightSummary() {
         // Given: A mock summary group
         let mockGroup = Mocks.summaryHeaderGroup
@@ -111,6 +122,17 @@ class ScenarioThreeTableFactoryTests: XCTestCase {
     func testHeaderHeightMoreDetail() {
         // Given: A mock more detail group
         let mockGroup = Mocks.moreDetailHeaderGroup
+        
+        // When: The header height is mapped
+        let headerHeight = ScenarioThreeTableFactory().headerHeight(for: mockGroup)
+        
+        // Then: The header height is 0
+        XCTAssertEqual(headerHeight, 35)
+    }
+    
+    func testHeaderHeightNilData() {
+        // Given: A mock nil group
+        let mockGroup = Mocks.nilHeaderGroup
         
         // When: The header height is mapped
         let headerHeight = ScenarioThreeTableFactory().headerHeight(for: mockGroup)
